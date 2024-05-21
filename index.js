@@ -93,10 +93,8 @@ function getCatImage() {
 
 
     fetch('https://api.thecatapi.com/v1/images/search?limit=10')
-        .then(res => {
-            
-            return res.json();
-        })
+        .then(res => res.json()
+)
     .then(data => {
         for (let i = 0; i < data.length; i++){
 
