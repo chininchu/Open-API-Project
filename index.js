@@ -1,6 +1,8 @@
 let catScore = 0;
 let dogScore = 0;
 
+
+
 function answers(answer, button) {
 //Select all buttons within the same parent element
 const buttons = button.parentElement.querySelectorAll('button');
@@ -36,7 +38,17 @@ function showResult() {
             fetch('https://api.thecatapi.com/v1/images/search')
             .then(res => res.json())
             .then(data => {
+
+
+
+
+
                 catPerson.innerHTML = `<img src="${data[0].url}" alt="Cat Image" class="responsive-img"/>`
+
+
+
+
+
             })
             .catch(error => console.error('Error fetching cat image:', error));
     } else {
@@ -73,14 +85,53 @@ function restartQuiz() {
 const catImage = document.querySelector('#catImage');
 const dogImage = document.querySelector('#dogImage');
 
+
 function getCatImage() {
+
+    // let result = " "
+
+
+
     fetch('https://api.thecatapi.com/v1/images/search?limit=10')
-    .then(res => res.json())
+        .then(res => {
+            
+            return res.json();
+        })
     .then(data => {
-        for (let i = 0; i < data.length; i++) 
-            { console.log(data[i].url); 
-                // catImage.innerHTML = `<img src="${data[0].url}" alt="Cat Image" class="responsive-img"/>`
-    }
+        for (let i = 0; i < data.length; i++){
+
+            console.log(data[i].url);
+
+        
+            // result += `<img src="${data[i].url}" alt="Cat Image" class="responsive-img"/>`
+            
+            // result += `<img src="${data[i].url}" alt="Cat Image" class="responsive-img"/>`
+            
+            // result += `<img src="${data[i].url}" alt="Cat Image" class="responsive-img"/>`
+            
+            // result += `<img src="${data[i].url}" alt="Cat Image" class="responsive-img"/>`
+            
+            // result += `<img src="${data[i].url}" alt="Cat Image" class="responsive-img"/>`
+            
+            // result +=  `<img src="${data[i].url}" alt="Cat Image" class="responsive-img"/>`
+
+
+
+
+
+
+
+            
+        }
+
+        
+
+
+
+
+        
+    
+    
         
     })
     .catch(error => console.error('Error fetching cat image:', error));
